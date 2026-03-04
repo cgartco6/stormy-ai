@@ -10,23 +10,32 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 fi
 
-# Create virtual environment
-echo "Creating virtual environment..."
-python3 -m venv venv
-if [ $? -ne 0 ]; then
-    echo "Failed to create virtual environment."
+# Check Python version
+PY_VERSION=$(python3 --version | cut -d' ' -f2 | cut -d. -f1-2)
+if (( $(echo "$PY_VERSION < 3.8" | bc -l) )); then
+    echo "Python 3.8+ required. Found $PY_VERSION"
     exit 1
 fi
 
-# Activate and install dependencies
-echo "Installing dependencies..."
+# Install Homebrew if missing (for VLC, ffmpeg)
+if ! command -v brew &> /dev/null; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install system dependencies
+echo "Installing system dependencies..."
+brew install vlc ffmpeg git
+
+# Create virtual environment
+echo "Creating virtual environment..."
+python3 -m venv venv
 source venv/bin/activate
+
+# Install Python dependencies
+echo "Installing Python dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
-if [ $? -ne 0 ]; then
-    echo "Failed to install dependencies."
-    exit 1
-fi
 
 # Check for .env file
 if [ ! -f .env ]; then
