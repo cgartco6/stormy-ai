@@ -26,6 +26,10 @@ echo "Installing Python dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# Install Stormy package in editable mode
+echo "Installing Stormy package..."
+pip install -e .
+
 # Check for .env file
 if [ ! -f .env ]; then
     echo "Creating .env file from example..."
