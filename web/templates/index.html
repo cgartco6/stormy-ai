@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Stormy AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛈️</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>Stormy AI</h1>
+                <div class="mood-indicator" id="mood-indicator">😏</div>
+            </div>
+        </header>
+        <main>
+            <div class="chat-container" id="chat-container">
+                <!-- Messages will appear here -->
+                <div class="message stormy">
+                    <div class="avatar">⛈️</div>
+                    <div class="bubble">Hey there! I'm Stormy. What's up? Don't call me Siri, or I'll get jealous.</div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="input-container">
+                <button id="voice-btn" class="voice-btn" title="Voice input (if supported)">🎤</button>
+                <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                <button id="send-btn" class="send-btn">➤</button>
+            </div>
+        </footer>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
