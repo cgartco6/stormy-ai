@@ -1,0 +1,25 @@
+{
+  "stations": [
+    {
+      "name": "Bok Radio FM98.9",
+      "location": "Cape Town, South Africa",
+      "country": "ZA",
+      "stream_url": "http://iceant.citrus3.com:8000/stream",
+      "genres": ["adult contemporary", "pop"]
+    },
+    {
+      "name": "BBC Radio 1",
+      "location": "London, UK",
+      "country": "GB",
+      "stream_url": "http://stream.live.vc.bbcmedia.co.uk/bbc_radio_one",
+      "genres": ["pop", "rock", "dance"]
+    },
+    {
+      "name": "NPR",
+      "location": "Washington, DC",
+      "country": "US",
+      "stream_url": "https://npr-ice.streamguys1.com/live.mp3",
+      "genres": ["news", "talk"]
+    }
+  ]
+}
