@@ -42,6 +42,15 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM Install Stormy package in editable mode
+echo Installing Stormy package...
+pip install -e .
+if errorlevel 1 (
+    echo Failed to install Stormy package.
+    pause
+    exit /b 1
+)
+
 REM Check for .env file
 if not exist .env (
     echo Creating .env file from example...
