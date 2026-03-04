@@ -2,16 +2,15 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from stormy.core.ai_engine import AIEngine
 
-app = Flask(__name__, 
+app = Flask(__name__,
             template_folder='../web/templates',
             static_folder='../web/static')
-CORS(app)  # Enable CORS for mobile apps
+CORS(app)
 
 ai_engine = AIEngine()
 
 @app.route('/')
 def index():
-    """Serve the mobile-first web interface."""
     return render_template('index.html')
 
 @app.route('/chat', methods=['POST'])
