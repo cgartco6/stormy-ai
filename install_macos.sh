@@ -36,6 +36,7 @@ source venv/bin/activate
 echo "Installing Python dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
+pip install -e
 
 # Check for .env file
 if [ ! -f .env ]; then
