@@ -1,0 +1,16 @@
+# API Keys
+OPENAI_API_KEY=your_openai_key
+WEATHER_API_KEY=your_openweather_api_key
+GOOGLE_SEARCH_API_KEY=your_google_api_key
+GOOGLE_SEARCH_ENGINE_ID=your_search_engine_id
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+TWILIO_PHONE_NUMBER=+1234567890
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+IPINFO_TOKEN=your_ipinfo_token
+
+# Optional
+MUSIC_DIR=~/Music
+MEMORY_DIR=./memory_store
+DEFAULT_LOCATION=New York
