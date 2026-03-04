@@ -4,33 +4,27 @@ echo "   Stormy AI - One-Click Installer"
 echo "========================================"
 echo
 
-# Install system dependencies (optional, for VLC)
-sudo apt-get update
-sudo apt-get install -y python3-pip python3-venv vlc ffmpeg
-
 # Check for Python
 if ! command -v python3 &> /dev/null; then
-    echo "Python 3 is not installed. Please install Python 3.8+"
-    exit 1
+    echo "Python 3 is not installed. Installing..."
+    sudo apt update
+    sudo apt install -y python3 python3-pip python3-venv
 fi
+
+# Install system dependencies
+echo "Installing system dependencies..."
+sudo apt update
+sudo apt install -y vlc ffmpeg git curl
 
 # Create virtual environment
 echo "Creating virtual environment..."
 python3 -m venv venv
-if [ $? -ne 0 ]; then
-    echo "Failed to create virtual environment."
-    exit 1
-fi
-
-# Activate and install dependencies
-echo "Installing dependencies..."
 source venv/bin/activate
+
+# Install Python dependencies
+echo "Installing Python dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
-if [ $? -ne 0 ]; then
-    echo "Failed to install dependencies."
-    exit 1
-fi
 
 # Check for .env file
 if [ ! -f .env ]; then
