@@ -1,0 +1,11 @@
+version: '3'
+services:
+  stormy:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./memory_store:/app/memory_store
+      - ~/Music:/app/music
