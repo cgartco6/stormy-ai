@@ -1,5 +1,5 @@
 @echo off
-title Stormy AI Installer
+title Stormy AI Installer for Windows
 echo ========================================
 echo    Stormy AI - One-Click Installer
 echo ========================================
@@ -10,6 +10,14 @@ python --version >nul 2>&1
 if errorlevel 1 (
     echo Python is not installed or not in PATH.
     echo Please install Python 3.8 or higher from https://python.org
+    pause
+    exit /b 1
+)
+
+REM Check Python version
+python -c "import sys; exit(0) if sys.version_info >= (3,8) else exit(1)" >nul 2>&1
+if errorlevel 1 (
+    echo Python 3.8 or higher is required.
     pause
     exit /b 1
 )
