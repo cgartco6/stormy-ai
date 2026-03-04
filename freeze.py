@@ -1,4 +1,3 @@
-# freeze.py
 from flask_frozen import Freezer
 from stormy.api.routes import app
 
